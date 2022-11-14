@@ -35,13 +35,9 @@
 		<form action="" method="POST">
 			<input type="text" name="user" placeholder="Username" class="input-control">
 			<input type="password" name="pass" placeholder="Password" class="input-control">
-			<input type="submit" name="submit" value="Login" class="btn">
+			<input type="submit" name="submit" value="Login" class="btn1">
 		</form>
-		<br>
-        <p>Don't have an account yet?
-                <a href="register.php">Register</a>
-        </p>
-		<br>
+
 		<?php if (isset($error_pass)) {echo "<h2><a>Your Password is Wrong!</a></h2>";} ?>
     	<?php if (isset($error_username)) {echo "<h2><a>Account Not Found!</a></h2>";} ?>
 	</div>
