@@ -20,26 +20,20 @@
 <body>
 <header class="header">
     <a href="#home" class="logo"> <img src="images/logo.png" alt=""> </a>
-    <h2>Dark Mode ></h2>
+    <h2>Dark Mode</h2>
     <input type="checkbox" id="darkToggle" class="darkToggle">
     <label for="darkToggle"></label>
-    <form action="" class="search-form">
-        <input type="search" name="" placeholder="search here..." id="search-box">
-        <label for="search-box" class="fas fa-search"></label>
-    </form>
     <div class="icons">
         <div id="menu-btn" class="fas fa-bars"></div>
-        <div id="search-btn" class="fas fa-search"></div>
         <a href="profile.php" class="fas fa-user"></a>
         <a href="#category" class="fas fa-shopping-cart"></a>
     </div>
 </header>
 <nav class="navbar">
     <div id="close-navbar" class="fas fa-times"></div>
-    <a href="profile.php">admin</a>
+    <a href="profile.php">profile admin</a>
     <a href="#home">home</a>
-    <a href="#shop">shop</a>
-    <a href="#gallery">gallery</a>
+    <a href="data-product.php">product</a>
     <a href="logout.php">log out</a>
 </nav>
 <section class="home" id="home">
@@ -48,7 +42,6 @@
             <img src="images/content-img-2.png" alt="">
             <span>Beauty cosmetics</span>
             <h3>cosmetics</h3>
-            <a href="#" class="btn">Explore more</a>
         </div>
         <div class="image">
             <img src="images/home-img-2.png" alt="">
@@ -113,20 +106,6 @@
                     <a href="data-product.php" class="btn">Add More</a>
                 </div>
             </div>
-</section>
-<section class="gallery" id="gallery">
-    <div class="heading">
-        <h1>our gallery</h1>
-        <p>Testimonial Products</p>
-    </div>
-    <div class="lightbox">
-        <a href="images/img-1.jpg"><img src="images/img-1.jpg" alt=""></a>
-        <a href="images/img-2.jpg"><img src="images/img-2.jpg" alt=""></a>
-        <a href="images/img-3.jpg"><img src="images/img-3.jpg" alt=""></a>
-        <a href="images/img-4.jpg"><img src="images/img-4.jpg" alt=""></a>
-        <a href="images/img-5.jpg"><img src="images/img-5.jpg" alt=""></a>
-        <a href="images/img-6.jpg"><img src="images/img-6.jpg" alt=""></a>
-    </div>
 </section>
 <section class="footer">
     <div class="box-container">
