@@ -7,102 +7,69 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Beauty COSMETICS</title>
-	<link rel="stylesheet" href="css/stylesheet.css">
+	<title>BEAUTY COSMETIC</title>
+	<link rel="stylesheet" href="css/stylesheet.css?v<?= time() ?>">
 	<link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
-	<!-- <script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script> -->
 </head>
 <body>
 	<header>
 		<div class="container">
-			<h1><a href="index.php">Beauty Cosmetics</a></h1>
-		</div>
+			<h1><a href="index.php">BEAUTY COSMETICS</a></h1>
 	</header>
-
 	<div class="section">
 		<div class="container">
-			<h3>Add Product Data</h3>
+			<h3>Products Data</h3>
 			<div class="box">
-				<form action="" method="POST" enctype="multipart/form-data">
-					<select class="input-control" name="kategori" required>
-						<option value="">--Select--</option>
-						<?php 
-							$kategori = mysqli_query($conn, "SELECT * FROM tb_category ORDER BY category_id DESC");
-							while($r = mysqli_fetch_array($kategori)){
+				<p class="tombol-add"><a href="add-product.php" >Add Products Data</a></p>
+				<table border="1" cellspacing="0" class="table">
+					<thead>
+						<tr>
+							<th width="60px">No</th>
+							<th><a href="data-category.php">Category</a></th>
+							<th><a href="product.php">Products Name</a></th>
+							<th >Price</th>
+							<th>Image</th>
+							<th>Status</th>
+							<th width="150px">Upload Date</th>
+							<th width="150px" colspan="4">Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php
+							$no = 1;
+							$images = mysqli_query($conn, "SELECT * FROM tb_product LEFT JOIN tb_category USING (category_id) ORDER BY product_id DESC");
+							if(mysqli_num_rows($images) > 0){
+							while($row = mysqli_fetch_array($images)){
 						?>
-						<option value="<?php echo $r['category_id'] ?>"><?php echo $r['category_name'] ?></option>
+						<tr>
+							<td><?php echo $no++ ?></td>
+							<td><?php echo $row['category_name'] ?></td>
+							<td><?php echo $row['product_name'] ?></td>
+							<td>Rp. <?php echo number_format($row['product_price']) ?></td>
+							<td><a href="images/<?php echo $row['product_image'] ?>" target="_blank"> <img src="images/<?php echo $row['product_image'] ?>" width="200px"> </a></td>
+							<td><?php echo ($row['product_status'] == 0)? 'Out of Stock':'Ready'; ?></td>
+							<td><?php echo $row['date_created'] ?></td>
+							<td colspan="2" align="center">
+								<a href="edit-product.php?id=<?php echo $row['product_id'] ?>"> Edit </a> 
+							</td>
+							<td>
+							<a href="proses-hapus.php?idp=<?php echo $row['product_id'] ?>" onclick="return confirm('Are You Sure to Delete ?')">Delete</a>
+							</td>
+						</tr>
+						<?php }}else{ ?>
+							<tr>
+								<td colspan="7">No Data!</td>
+							</tr>
 						<?php } ?>
-					</select>
-
-					<input type="text" name="nama" class="input-control" placeholder="Product Name" required>
-					<input type="text" name="harga" class="input-control" placeholder="Price" required>
-					<input type="file" name="gambar" class="input-control" required>
-					<input type="textarea" name="deskripsi" class="input-control" placeholder="Description"></textarea><br>
-					<select class="input-control" name="status">
-						<option value="">--Select--</option>
-						<option value="1">Ready</option>
-						<option value="0">Out of Stock</option>
-					</select>
-
-					<input type="submit" name="submit" value="Submit" class="btn">
-				</form>
-				<?php 
-					if(isset($_POST['submit'])){
-						$kategori 	= $_POST['kategori'];
-						$nama 		= $_POST['nama'];
-						$harga 		= $_POST['harga'];
-						$deskripsi 	= $_POST['deskripsi'];
-						$status 	= $_POST['status'];
-
-						$filename = $_FILES['gambar']['name'];
-						$tmp_name = $_FILES['gambar']['tmp_name'];
-
-						$type1 = explode('.', $filename);
-						$type2 = $type1[1];
-
-						$newname = 'images'.time().'.'.$type2;
-						$tipe_diizinkan = array('jpg', 'jpeg', 'png', 'gif');
-
-						if(!in_array($type2, $tipe_diizinkan)){
-							echo '<script>alert("File Format not allowed!")</scrtip>';
-
-						}else{
-							move_uploaded_file($tmp_name, './images/'.$newname);
-
-							$insert = mysqli_query($conn, "INSERT INTO tb_product VALUES (
-										null,
-										'".$kategori."',
-										'".$nama."',
-										'".$harga."',
-										'".$deskripsi."',
-										'".$newname."',
-										'".$status."',
-										null
-											) ");
-
-							if($insert){
-								echo '<script>alert("Add Data Succesfully!")</script>';
-								echo '<script>window.location="data-product.php"</script>';
-							}else{
-								echo 'Failes '.mysqli_error($conn);
-							}
-
-						}
-
-						
-						
-					}
-				?>
+					</tbody>
+				</table>
 			</div>
 		</div>
 	</div>
 	<footer>
 		<div class="container">
-			<small>Copyright &copy; 2022 - Beauty Cosmetics</small>
+			<small>Copyright &copy; 2022 - JHA Cosmetics</small>
 		</div>
 	</footer>
-	<script>
-        CKEDITOR.replace( 'deskripsi' );
-    </script>
 </body>
 </html>
