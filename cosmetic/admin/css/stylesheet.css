@@ -41,6 +41,14 @@ a {
 	border:none;
 	cursor: pointer;
 }
+.btn1{
+	padding:8px 15px;
+	background-color: #b80b73;
+	color: #fff;
+	border:none;
+	cursor: pointer;
+	width: 100%;
+}
 header {
 	background-color: #ff6eb6;
 	color: #fff;
