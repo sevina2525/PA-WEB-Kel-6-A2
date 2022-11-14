@@ -23,10 +23,14 @@
     <h2>Dark Mode</h2>
     <input type="checkbox" id="darkToggle" class="darkToggle">
     <label for="darkToggle"></label>
+    <form action="" class="search-form">
+        <input type="search" name="" placeholder="search here..." id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+    </form>
     <div class="icons">
         <div id="menu-btn" class="fas fa-bars"></div>
         <a href="profile.php" class="fas fa-user"></a>
-        <a href="#category" class="fas fa-shopping-cart"></a>
+        <a href="data-product.php" class="fas fa-store"></a>
     </div>
 </header>
 <nav class="navbar">
@@ -112,11 +116,8 @@
         <div class="box">
             <h3>quick links</h3>
             <a class="link" href="#home"> <i class="fas fa-angle-right"></i> home</a>
-            <a class="link" href="#shop"> <i class="fas fa-angle-right"></i> shop</a>
-            <a class="link" href="#gallery"> <i class="fas fa-angle-right"></i> gallery</a>
-            <!-- <a href="#" class="link"> <i class="fas fa-angle-right"></i> my order </a>
-            <a href="#" class="link"> <i class="fas fa-angle-right"></i> my favorite </a>
-            <a href="#" class="link"> <i class="fas fa-angle-right"></i> my wishlist </a> -->
+            <a class="link" href="profile.php"> <i class="fas fa-angle-right"></i> profile admin</a>
+            <a class="link" href="data-product.php"> <i class="fas fa-angle-right"></i> product</a>
         </div>
         <div class="box">
           <h3>Security and Using</h3>
