@@ -90,6 +90,14 @@ footer {
 	width: 100%;
 	border-collapse: collapse;
 }
+th {
+  background-color: #ff71b6;
+}
+
+.table tr:hover{
+	background-color: #ffc5e7;
+	color: #fff;
+}
 .table tr {
 	height: 30px;
 }
