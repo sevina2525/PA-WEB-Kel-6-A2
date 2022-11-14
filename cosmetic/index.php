@@ -10,33 +10,20 @@
 <body>
     
 <h1>WELCOME
-    <br> JH COSMETICS
+    <br> BEAUTY COSMETIC
 </h1>
     <div class="container">
         <p align="CENTER"> LOGIN SEBAGAI :  </p>
-        <!-- <div class="pilihan">  -->
-        <!-- <form method="POST" action=""><br> -->
         <ul>
             <li>
                 <a href="admin/login.php"> Admin</a>
-                <!-- <input type="radio" name="MyRadio" value="First" checked>Admin<br> -->
             </li>
             <li>
                 <a href="user/login.php"> User</a>
-                <!-- <input type="radio" name="MyRadio" value="Second">User -->
             </li>
         </ul>
-       
-        
-        <br><br>
-        <!-- <input type="submit"  value="Result" name="Result">  -->
-        <!-- </div> -->
     </div>
-    <!-- <button class="btn first" name="buton" value="admin">Admin</button>
-        <button class="btn first" name="buton" value="user">Pelanggan</button>
-        <button class="btn first" name="buton" value="">Close</button> -->
-    
-    <!-- </form> -->
+
 
 </body>
 </html>
