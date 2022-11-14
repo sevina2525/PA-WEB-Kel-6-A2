@@ -45,22 +45,23 @@ code {
 }
 
 .darkToggle {
-    width: 50px;
-    height: 20px;
-    background: white;
-    border-radius: 50px;
-    border: 2px solid #555;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50px;
+  border: 2px solid #555;
+  display: inline;
+  
 }
 
 .darkToggle:checked {
-    background: #333;
+  background: #333;
 }
 
 .dark {
-    color: white;
-    background: #444;
+  color: white;
+  background: #444;
 }
-
 section {
     padding: 5rem 9%;
 }
